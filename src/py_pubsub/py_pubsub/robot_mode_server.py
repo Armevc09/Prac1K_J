@@ -1,4 +1,4 @@
-from more_interfaces.srv import AddNumbers
+from more_interfaces.srv import RobotMode
 
 import rclpy
 from rclpy.node import Node
@@ -8,7 +8,7 @@ class MinimalService(Node):
 
     def __init__(self):
         super().__init__('minimal_service')
-        self.srv = self.create_service(AddNumbers, 'clnt_srv', self.add_two_ints_callback)
+        self.srv = self.create_service(RobotMode, 'robot', self.add_two_ints_callback)
 
     def add_two_ints_callback(self, request, response):
         if request.mode == 0:
@@ -17,7 +17,8 @@ class MinimalService(Node):
             response.result = "Autonomous"
         if request.mode == 2:
             response.result = "Safe mode"
-        ###self.get_logger().info('Incoming request\na: %d' % (request.a))
+            
+        self.get_logger().info('Robot mode changed: %s' % (response.result))
 
         return response
 

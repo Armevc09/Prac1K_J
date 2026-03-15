@@ -15,6 +15,7 @@ find_package(rosidl_default_generators REQUIRED)
 set(msg_files
   "msg/AddressBook.msg"
   "srv/AddNumbers.srv"
+  "srv/RobotMode.srv"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}

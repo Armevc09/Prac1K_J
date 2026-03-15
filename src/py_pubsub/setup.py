@@ -36,6 +36,8 @@ setup(
             'rob_v = py_pubsub.robot_sensor_publisher:main',
             'rob_e = py_pubsub.robot_monitor:main',
             'rob_s = py_pubsub.robot_state_node:main',
+            'rob_ser = py_pubsub.robot_mode_server:main',
+            'rob_cln = py_pubsub.robot_safety_controller:main',
         ],
     },
 )

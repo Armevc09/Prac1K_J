@@ -18,7 +18,7 @@ class MinimalSubscriber(Node):
             'robot_batery',
             self.listener_callback2,
             10)
-        self.subscription 
+
         self.subscription2
 
     def listener_callback(self, msg):
